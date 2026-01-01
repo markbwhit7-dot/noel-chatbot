@@ -18,11 +18,9 @@ services:
       - key: PYTHON_VERSION
         value: 3.11.0
 
-  # Frontend
-  - type: web
+  # Frontend (static site - free by default)
+  - type: static
     name: noel-chatbot-frontend
-    runtime: static
-    plan: free
     rootDir: frontend
     buildCommand: npm install && npm run build
     staticPublishPath: dist
