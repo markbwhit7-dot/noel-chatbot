@@ -14,8 +14,8 @@ class Settings(BaseSettings):
     groq_model: str = "llama-3.1-8b-instant"
 
     # Qdrant
-    qdrant_url: str = "https://2f62aaa8-2cef-4634-8ab5-4aacc1b9cd68.sa-east-1-0.aws.cloud.qdrant.io:6333"
-    qdrant_api_key: str | None = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2Nlc3MiOiJtIn0.DaODSsMZPd3vcsweeNSF8kcgokcWQLLgrlP5ONw4Ow4"
+    qdrant_url: str
+    qdrant_api_key: str | None = None
     qdrant_collection_name: str = "noel_whittaker_docs"
 
     # Supabase (optional - for conversation history)
