@@ -1,0 +1,26 @@
+# FastAPI and server
+fastapi>=0.104.0
+uvicorn[standard]>=0.24.0
+python-multipart>=0.0.6
+pydantic>=2.5.0
+pydantic-settings>=2.1.0
+
+# LlamaIndex for RAG
+llama-index>=0.10.0
+llama-index-vector-stores-qdrant>=0.1.0
+llama-index-llms-anthropic>=0.1.0
+llama-index-embeddings-huggingface>=0.1.0
+sentence-transformers>=2.2.0
+
+# Anthropic Claude API
+anthropic>=0.18.0
+
+# Qdrant vector database
+qdrant-client>=1.7.0
+
+# Supabase for user context
+supabase>=2.3.0
+
+# Utilities
+python-dotenv>=1.0.0
+httpx>=0.26.0
