@@ -23,7 +23,7 @@ class Settings(BaseSettings):
     supabase_key: str | None = None
 
     # Embeddings (local model, no API key needed)
-    embedding_model: str = "all-MiniLM-L6-v2"
+    embedding_model: str = "BAAI/bge-large-en-v1.5"
 
     # RAG settings
     chunk_size: int = 512

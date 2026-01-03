@@ -2,7 +2,7 @@
 Ingest chunked PDF content into Qdrant vector database.
 
 Uses sentence-transformers for FREE local embeddings (no API key needed).
-Model: all-MiniLM-L6-v2 (384 dimensions, fast and effective)
+Model: BAAI/bge-large-en-v1.5 (1024 dimensions, high accuracy)
 
 Usage:
     python ingest_to_qdrant.py
@@ -29,9 +29,9 @@ from sentence_transformers import SentenceTransformer
 CHUNKS_JSON = "/home/mark/chunks_for_qdrant.json"
 COLLECTION_NAME = "noel_whittaker_docs"
 
-# Using all-MiniLM-L6-v2: fast, 384 dimensions, good quality
-EMBEDDING_MODEL = "all-MiniLM-L6-v2"
-EMBEDDING_DIMENSION = 384
+# Using bge-large-en-v1.5: 1024 dimensions, high accuracy
+EMBEDDING_MODEL = "BAAI/bge-large-en-v1.5"
+EMBEDDING_DIMENSION = 1024
 BATCH_SIZE = 32
 
 # Qdrant Cloud credentials
@@ -137,7 +137,6 @@ def verify_ingestion(qdrant: QdrantClient, model: SentenceTransformer) -> None:
     info = qdrant.get_collection(COLLECTION_NAME)
     print(f"\n=== Collection Stats ===")
     print(f"Points count: {info.points_count}")
-    print(f"Vectors count: {info.vectors_count}")
     print(f"Status: {info.status}")
 
     # Sample search to verify
